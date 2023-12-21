@@ -4,6 +4,7 @@ on:
   push
 jobs:
   build:
+    permissions: write-all
     name: build ${{ matrix.target }}
     runs-on: ubuntu-latest
     strategy:
