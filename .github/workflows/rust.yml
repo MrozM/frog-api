@@ -21,8 +21,7 @@ jobs:
             args: --release --all-features
         - name:
             Create zip file
-          run: zip rust-frog-api.zip playground
-          working-directory: build
+          run: zip rust-frog-api.zip frog-api
         - name: Upload App
           id: upload-release-asset 
           uses: actions/upload-release-asset@v1
