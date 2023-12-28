@@ -22,7 +22,7 @@ jobs:
             args: --release --all-features
         - name:
             Create zip file
-          run: zip -r rust-frog-api.zip target
+          run: zip -r rust-frog-api.zip target/release/frog-api
         - name: Create Release
           id: create_release
           uses: actions/create-release@v1
