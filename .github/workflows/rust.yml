@@ -30,7 +30,7 @@ jobs:
         - run: ls */
         - name:
             Create zip file
-          run: zip -r rust-frog-api.zip . -i target/release/frog-api
+          run: zip -r rust-frog-api.zip . -i target/
         - name: Create Release
           id: create_release
           uses: actions/create-release@v1
