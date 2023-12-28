@@ -8,4 +8,4 @@ edition = "2021"
 [dependencies]
 actix-web = "4.4.0"
 mysql = "24.0.0"
-openssl-sys = "0.9"
+openssl = { version = "0.10.61", features = ["vendored"] }
