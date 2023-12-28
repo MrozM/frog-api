@@ -17,20 +17,20 @@ jobs:
           with:
             toolchain: stable
             target: x86_64-unknown-linux-musl
-        - name: Install x86_64 Build Dependencies
-          run: sudo apt-get update && sudo apt-get install pkg-config libssl-dev
+        # - name: Install x86_64 Build Dependencies
+        #   run: sudo apt-get update && sudo apt-get install pkg-config libssl-dev
         - name: get cargo musl-tools
           run: sudo apt-get install musl-tools
-        - name: show openssl
-          run: cargo tree --target=x86_64-unknown-linux-musl -i openssl-sys | grep openssl
+        # - name: show openssl
+        #   run: cargo tree --target=x86_64-unknown-linux-musl -i openssl-sys | grep openssl
         - uses: actions-rs/cargo@v1
           with:
             command: build
-            args: --release --all-features --target x86_64-unknown-linux-musl
-        - run: ls */
+            args: --target x86_64-unknown-linux-musl --release --all-features 
+        - run: ls target/release/
         - name:
             Create zip file
-          run: zip -r rust-frog-api.zip target/release/
+          run: zip -r rust-frog-api.zip target/release/frog-api
         - name: Create Release
           id: create_release
           uses: actions/create-release@v1
