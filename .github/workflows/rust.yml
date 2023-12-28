@@ -26,11 +26,11 @@ jobs:
         - uses: actions-rs/cargo@v1
           with:
             command: build
-            args: --target x86_64-unknown-linux-musl --release --all-features 
-        - run: ls target/release/
+            args: --release --all-features 
+        - run: ls /*
         - name:
             Create zip file
-          run: zip -r rust-frog-api.zip target/release/frog-api
+          run: zip -r rust-frog-api.zip target/release/
         - name: Create Release
           id: create_release
           uses: actions/create-release@v1
