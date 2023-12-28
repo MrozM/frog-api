@@ -20,7 +20,7 @@ jobs:
         - name: Install x86_64 Build Dependencies
           run: sudo apt-get update && sudo apt-get install pkg-config libssl-dev
         - name: show openssl
-          run: cargo tree --target=x86_64-unknown-linux-musl -i openssl-sys | grep openssel
+          run: cargo tree --target=x86_64-unknown-linux-musl -i openssl-sys | grep openssl
         - uses: actions-rs/cargo@v1
           with:
             command: build
