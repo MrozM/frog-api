@@ -30,7 +30,7 @@ jobs:
         - run: rustc --print target-list
         - name:
             Create zip file
-          run: zip -r rust-frog-api.zip target
+          run: zip -r rust-frog-api.zip target/x86_64-unknown-linux-musl/release/frog-api
         - name: Create Release
           id: create_release
           uses: actions/create-release@v1
