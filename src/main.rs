@@ -2,7 +2,8 @@ use actix_web::{get, App, HttpResponse, HttpServer, Responder, HttpRequest};
 
 #[get("/")]
 async fn hello(req: HttpRequest) -> impl Responder {
-    let message = format!("hi! your ip: {:?}", req.peer_addr()) ;
+    let address = req.peer_addr().unwrap().ip();
+    let message = format!("hi! your ip: {:?}", address) ;
     HttpResponse::Ok().body(message)
 }
 
